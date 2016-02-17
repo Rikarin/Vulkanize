@@ -1,8 +1,6 @@
-Bindings for Vulkan 1.0
+Bindings for Vulkan 1.0.3.1
 
 
-Install GPU driver with vulkan support  
-Install Vulkan SDK  
-Import Vulkan.d  
-Link with vulkan-1.lib  
+GPU driver with vulkan support required!  
+`pragma(lib, "lib/vulkan-1.lib");` Link with lib/vulkan-1.lib or lib32/vulkan-1.lib  
 gg ez, have fun!  
