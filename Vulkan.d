@@ -23,7 +23,7 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-module Bindings.Vulkan;
+module Vulkan;
 
 
 auto VK_MAKE_VERSION(int major, int minor, int patch) {
