@@ -80,7 +80,7 @@ enum VK_NULL_HANDLE                    = 0;
 enum VK_LOD_CLAMP_NONE                 = 1000.0f;
 enum VK_REMAINING_MIP_LEVELS           = (~0U);
 enum VK_REMAINING_ARRAY_LAYERS         = (~0U);
-enum VK_WHOLE_SIZE                     = (~0ULL);
+enum VK_WHOLE_SIZE                     = (~0UL);
 enum VK_ATTACHMENT_UNUSED              = (~0U);
 enum VK_TRUE                           = 1;
 enum VK_FALSE                          = 0;
@@ -1118,9 +1118,9 @@ struct VkInstanceCreateInfo {
     VkInstanceCreateFlags       flags;
     const VkApplicationInfo*    pApplicationInfo;
     uint                    enabledLayerCount;
-    const char**          ppEnabledLayerNames;
+    const(char *)*          ppEnabledLayerNames;
     uint                    enabledExtensionCount;
-    const char**          ppEnabledExtensionNames;
+    const(char *)*          ppEnabledExtensionNames;
 }
 
 struct VkAllocationCallbacks {
@@ -1379,9 +1379,9 @@ struct VkDeviceCreateInfo {
     uint                           queueCreateInfoCount;
     const VkDeviceQueueCreateInfo*     pQueueCreateInfos;
     uint                           enabledLayerCount;
-    const char**                 ppEnabledLayerNames;
+    const(char *)*                 ppEnabledLayerNames;
     uint                           enabledExtensionCount;
-    const char**                 ppEnabledExtensionNames;
+    const(char *)*                 ppEnabledExtensionNames;
     const VkPhysicalDeviceFeatures*    pEnabledFeatures;
 }
 
@@ -2189,7 +2189,7 @@ alias PFN_vkGetPhysicalDeviceQueueFamilyProperties = nothrow void function(VkPhy
 alias PFN_vkGetPhysicalDeviceMemoryProperties = nothrow void function(VkPhysicalDevice physicalDevice, VkPhysicalDeviceMemoryProperties* pMemoryProperties);
 alias PFN_vkGetInstanceProcAddr = nothrow PFN_vkVoidFunction function(VkInstance instance, const char* pName);
 alias PFN_vkGetDeviceProcAddr = nothrow PFN_vkVoidFunction function(VkDevice device, const char* pName);
-alias PFN_vkCreateDevice = nothrow VkResult (VkPhysicalDevice physicalDevice, const VkDeviceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDevice* pDevice);
+alias PFN_vkCreateDevice = nothrow VkResult function(VkPhysicalDevice physicalDevice, const VkDeviceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDevice* pDevice);
 alias PFN_vkDestroyDevice = nothrow void function(VkDevice device, const VkAllocationCallbacks* pAllocator);
 alias PFN_vkEnumerateInstanceExtensionProperties = nothrow VkResult function(const char* pLayerName, uint* pPropertyCount, VkExtensionProperties* pProperties);
 alias PFN_vkEnumerateDeviceExtensionProperties = nothrow VkResult function(VkPhysicalDevice physicalDevice, const char* pLayerName, uint* pPropertyCount, VkExtensionProperties* pProperties);
@@ -2199,7 +2199,7 @@ alias PFN_vkGetDeviceQueue = nothrow void function(VkDevice device, uint queueFa
 alias PFN_vkQueueSubmit = nothrow VkResult function(VkQueue queue, uint submitCount, const VkSubmitInfo* pSubmits, VkFence fence);
 alias PFN_vkQueueWaitIdle = nothrow VkResult function(VkQueue queue);
 alias PFN_vkDeviceWaitIdle = nothrow VkResult function(VkDevice device);
-alias PFN_vkAllocateMemory = nothrow VkResult functionVkDevice device, const VkMemoryAllocateInfo* pAllocateInfo, const VkAllocationCallbacks* pAllocator, VkDeviceMemory* pMemory);
+alias PFN_vkAllocateMemory = nothrow VkResult function(VkDevice device, const VkMemoryAllocateInfo* pAllocateInfo, const VkAllocationCallbacks* pAllocator, VkDeviceMemory* pMemory);
 alias PFN_vkFreeMemory = nothrow void function(VkDevice device, VkDeviceMemory memory, const VkAllocationCallbacks* pAllocator);
 alias PFN_vkMapMemory = nothrow VkResult function(VkDevice device, VkDeviceMemory memory, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags flags, void** ppData);
 alias PFN_vkUnmapMemory = nothrow void function(VkDevice device, VkDeviceMemory memory);
@@ -2276,7 +2276,7 @@ alias PFN_vkCmdSetViewport = nothrow void function(VkCommandBuffer commandBuffer
 alias PFN_vkCmdSetScissor = nothrow void function(VkCommandBuffer commandBuffer, uint firstScissor, uint scissorCount, const VkRect2D* pScissors);
 alias PFN_vkCmdSetLineWidth = nothrow void function(VkCommandBuffer commandBuffer, float lineWidth);
 alias PFN_vkCmdSetDepthBias = nothrow void function(VkCommandBuffer commandBuffer, float depthBiasConstantFactor, float depthBiasClamp, float depthBiasSlopeFactor);
-alias PFN_vkCmdSetBlendConstants = nothrow void function(VkCommandBuffer commandBuffer, const float blendConstants[4]);
+alias PFN_vkCmdSetBlendConstants = nothrow void function(VkCommandBuffer commandBuffer, const float[4] blendConstants);
 alias PFN_vkCmdSetDepthBounds = nothrow void function(VkCommandBuffer commandBuffer, float minDepthBounds, float maxDepthBounds);
 alias PFN_vkCmdSetStencilCompareMask = nothrow void function(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, uint compareMask);
 alias PFN_vkCmdSetStencilWriteMask = nothrow void function(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, uint writeMask);
