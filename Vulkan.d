@@ -58,7 +58,7 @@ mixin(VK_DEFINE_HANDLE!"VkInstance");
 mixin(VK_DEFINE_HANDLE!"VkPhysicalDevice");
 mixin(VK_DEFINE_HANDLE!"VkDevice");
 mixin(VK_DEFINE_HANDLE!"VkQueue");
-mixin(VK_DEFINE_HANDLE!"VkSemaphore");
+mixin(VK_DEFINE_NON_DISPATCHABLE_HANDLE!"VkSemaphore");
 mixin(VK_DEFINE_HANDLE!"VkCommandBuffer");
 mixin(VK_DEFINE_NON_DISPATCHABLE_HANDLE!"VkFence");
 mixin(VK_DEFINE_NON_DISPATCHABLE_HANDLE!"VkDeviceMemory");
