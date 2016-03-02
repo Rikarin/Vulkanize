@@ -1107,7 +1107,7 @@ alias PFN_vkInternalFreeNotification = nothrow void function(
 alias PFN_vkVoidFunction = nothrow void function();
 
 struct VkApplicationInfo {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_APPLICATION_INFO;
     const void*        pNext;
     const char*        pApplicationName;
     uint               applicationVersion;
@@ -1117,7 +1117,7 @@ struct VkApplicationInfo {
 }
 
 struct VkInstanceCreateInfo {
-    VkStructureType             sType;
+    VkStructureType             sType = VkStructureType.VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     const void*                 pNext;
     VkInstanceCreateFlags       flags;
     const VkApplicationInfo*    pApplicationInfo;
@@ -1368,7 +1368,7 @@ struct VkPhysicalDeviceMemoryProperties {
 }
 
 struct VkDeviceQueueCreateInfo {
-    VkStructureType             sType;
+    VkStructureType             sType = VkStructureType.VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
     const void*                 pNext;
     VkDeviceQueueCreateFlags    flags;
     uint                    queueFamilyIndex;
@@ -1377,7 +1377,7 @@ struct VkDeviceQueueCreateInfo {
 }
 
 struct VkDeviceCreateInfo {
-    VkStructureType                    sType;
+    VkStructureType                    sType = VkStructureType.VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
     const void*                        pNext;
     VkDeviceCreateFlags                flags;
     uint                           queueCreateInfoCount;
@@ -1402,7 +1402,7 @@ struct VkLayerProperties {
 }
 
 struct VkSubmitInfo {
-    VkStructureType                sType;
+    VkStructureType                sType = VkStructureType.VK_STRUCTURE_TYPE_SUBMIT_INFO;
     const void*                    pNext;
     uint                       waitSemaphoreCount;
     const VkSemaphore*             pWaitSemaphores;
@@ -1414,14 +1414,14 @@ struct VkSubmitInfo {
 }
 
 struct VkMemoryAllocateInfo {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
     const void*        pNext;
     VkDeviceSize       allocationSize;
     uint           memoryTypeIndex;
 }
 
 struct VkMappedMemoryRange {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
     const void*        pNext;
     VkDeviceMemory     memory;
     VkDeviceSize       offset;
@@ -1496,7 +1496,7 @@ struct VkSparseImageMemoryBindInfo {
 }
 
 struct VkBindSparseInfo {
-    VkStructureType                             sType;
+    VkStructureType                             sType = VkStructureType.VK_STRUCTURE_TYPE_BIND_SPARSE_INFO;
     const void*                                 pNext;
     uint                                    waitSemaphoreCount;
     const VkSemaphore*                          pWaitSemaphores;
@@ -1511,25 +1511,25 @@ struct VkBindSparseInfo {
 }
 
 struct VkFenceCreateInfo {
-    VkStructureType       sType;
+    VkStructureType       sType = VkStructureType.VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
     const void*           pNext;
     VkFenceCreateFlags    flags;
 }
 
 struct VkSemaphoreCreateInfo {
-    VkStructureType           sType;
+    VkStructureType           sType = VkStructureType.VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
     const void*               pNext;
     VkSemaphoreCreateFlags    flags;
 }
 
 struct VkEventCreateInfo {
-    VkStructureType       sType;
+    VkStructureType       sType = VkStructureType.VK_STRUCTURE_TYPE_EVENT_CREATE_INFO;
     const void*           pNext;
     VkEventCreateFlags    flags;
 }
 
 struct VkQueryPoolCreateInfo {
-    VkStructureType                  sType;
+    VkStructureType                  sType = VkStructureType.VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO;
     const void*                      pNext;
     VkQueryPoolCreateFlags           flags;
     VkQueryType                      queryType;
@@ -1538,7 +1538,7 @@ struct VkQueryPoolCreateInfo {
 }
 
 struct VkBufferCreateInfo {
-    VkStructureType        sType;
+    VkStructureType        sType = VkStructureType.VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
     const void*            pNext;
     VkBufferCreateFlags    flags;
     VkDeviceSize           size;
@@ -1549,7 +1549,7 @@ struct VkBufferCreateInfo {
 }
 
 struct VkBufferViewCreateInfo {
-    VkStructureType            sType;
+    VkStructureType            sType = VkStructureType.VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
     const void*                pNext;
     VkBufferViewCreateFlags    flags;
     VkBuffer                   buffer;
@@ -1559,7 +1559,7 @@ struct VkBufferViewCreateInfo {
 }
 
 struct VkImageCreateInfo {
-    VkStructureType          sType;
+    VkStructureType          sType = VkStructureType.VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
     const void*              pNext;
     VkImageCreateFlags       flags;
     VkImageType              imageType;
@@ -1600,7 +1600,7 @@ struct VkImageSubresourceRange {
 }
 
 struct VkImageViewCreateInfo {
-    VkStructureType            sType;
+    VkStructureType            sType = VkStructureType.VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
     const void*                pNext;
     VkImageViewCreateFlags     flags;
     VkImage                    image;
@@ -1611,7 +1611,7 @@ struct VkImageViewCreateInfo {
 }
 
 struct VkShaderModuleCreateInfo {
-    VkStructureType              sType;
+    VkStructureType              sType = VkStructureType.VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
     const void*                  pNext;
     VkShaderModuleCreateFlags    flags;
     size_t                       codeSize;
@@ -1619,7 +1619,7 @@ struct VkShaderModuleCreateInfo {
 }
 
 struct VkPipelineCacheCreateInfo {
-    VkStructureType               sType;
+    VkStructureType               sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO;
     const void*                   pNext;
     VkPipelineCacheCreateFlags    flags;
     size_t                        initialDataSize;
@@ -1640,7 +1640,7 @@ struct VkSpecializationInfo {
 }
 
 struct VkPipelineShaderStageCreateInfo {
-    VkStructureType                     sType;
+    VkStructureType                     sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
     const void*                         pNext;
     VkPipelineShaderStageCreateFlags    flags;
     VkShaderStageFlagBits               stage;
@@ -1663,7 +1663,7 @@ struct VkVertexInputAttributeDescription {
 }
 
 struct VkPipelineVertexInputStateCreateInfo {
-    VkStructureType                             sType;
+    VkStructureType                             sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
     const void*                                 pNext;
     VkPipelineVertexInputStateCreateFlags       flags;
     uint                                    vertexBindingDescriptionCount;
@@ -1673,7 +1673,7 @@ struct VkPipelineVertexInputStateCreateInfo {
 }
 
 struct VkPipelineInputAssemblyStateCreateInfo {
-    VkStructureType                            sType;
+    VkStructureType                            sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     const void*                                pNext;
     VkPipelineInputAssemblyStateCreateFlags    flags;
     VkPrimitiveTopology                        topology;
@@ -1681,7 +1681,7 @@ struct VkPipelineInputAssemblyStateCreateInfo {
 }
 
 struct VkPipelineTessellationStateCreateInfo {
-    VkStructureType                           sType;
+    VkStructureType                           sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_STATE_CREATE_INFO;
     const void*                               pNext;
     VkPipelineTessellationStateCreateFlags    flags;
     uint                                  patchControlPoints;
@@ -1712,7 +1712,7 @@ struct VkRect2D {
 }
 
 struct VkPipelineViewportStateCreateInfo {
-    VkStructureType                       sType;
+    VkStructureType                       sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
     const void*                           pNext;
     VkPipelineViewportStateCreateFlags    flags;
     uint                              viewportCount;
@@ -1722,7 +1722,7 @@ struct VkPipelineViewportStateCreateInfo {
 }
 
 struct VkPipelineRasterizationStateCreateInfo {
-    VkStructureType                            sType;
+    VkStructureType                            sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
     const void*                                pNext;
     VkPipelineRasterizationStateCreateFlags    flags;
     VkBool32                                   depthClampEnable;
@@ -1738,7 +1738,7 @@ struct VkPipelineRasterizationStateCreateInfo {
 }
 
 struct VkPipelineMultisampleStateCreateInfo {
-    VkStructureType                          sType;
+    VkStructureType                          sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
     const void*                              pNext;
     VkPipelineMultisampleStateCreateFlags    flags;
     VkSampleCountFlagBits                    rasterizationSamples;
@@ -1760,7 +1760,7 @@ struct VkStencilOpState {
 }
 
 struct VkPipelineDepthStencilStateCreateInfo {
-    VkStructureType                           sType;
+    VkStructureType                           sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_DEPTH_STENCIL_STATE_CREATE_INFO;
     const void*                               pNext;
     VkPipelineDepthStencilStateCreateFlags    flags;
     VkBool32                                  depthTestEnable;
@@ -1786,7 +1786,7 @@ struct VkPipelineColorBlendAttachmentState {
 }
 
 struct VkPipelineColorBlendStateCreateInfo {
-    VkStructureType                               sType;
+    VkStructureType                               sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
     const void*                                   pNext;
     VkPipelineColorBlendStateCreateFlags          flags;
     VkBool32                                      logicOpEnable;
@@ -1797,7 +1797,7 @@ struct VkPipelineColorBlendStateCreateInfo {
 }
 
 struct VkPipelineDynamicStateCreateInfo {
-    VkStructureType                      sType;
+    VkStructureType                      sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
     const void*                          pNext;
     VkPipelineDynamicStateCreateFlags    flags;
     uint                             dynamicStateCount;
@@ -1805,7 +1805,7 @@ struct VkPipelineDynamicStateCreateInfo {
 }
 
 struct VkGraphicsPipelineCreateInfo {
-    VkStructureType                                  sType;
+    VkStructureType                                  sType = VkStructureType.VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     const void*                                      pNext;
     VkPipelineCreateFlags                            flags;
     uint                                         stageCount;
@@ -1827,7 +1827,7 @@ struct VkGraphicsPipelineCreateInfo {
 }
 
 struct VkComputePipelineCreateInfo {
-    VkStructureType                    sType;
+    VkStructureType                    sType = VkStructureType.VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO;
     const void*                        pNext;
     VkPipelineCreateFlags              flags;
     VkPipelineShaderStageCreateInfo    stage;
@@ -1843,7 +1843,7 @@ struct VkPushConstantRange {
 }
 
 struct VkPipelineLayoutCreateInfo {
-    VkStructureType                 sType;
+    VkStructureType                 sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
     const void*                     pNext;
     VkPipelineLayoutCreateFlags     flags;
     uint                        setLayoutCount;
@@ -1853,7 +1853,7 @@ struct VkPipelineLayoutCreateInfo {
 }
 
 struct VkSamplerCreateInfo {
-    VkStructureType         sType;
+    VkStructureType         sType = VkStructureType.VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
     const void*             pNext;
     VkSamplerCreateFlags    flags;
     VkFilter                magFilter;
@@ -1882,7 +1882,7 @@ struct VkDescriptorSetLayoutBinding {
 }
 
 struct VkDescriptorSetLayoutCreateInfo {
-    VkStructureType                        sType;
+    VkStructureType                        sType = VkStructureType.VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
     const void*                            pNext;
     VkDescriptorSetLayoutCreateFlags       flags;
     uint                               bindingCount;
@@ -1895,7 +1895,7 @@ struct VkDescriptorPoolSize {
 }
 
 struct VkDescriptorPoolCreateInfo {
-    VkStructureType                sType;
+    VkStructureType                sType = VkStructureType.VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
     const void*                    pNext;
     VkDescriptorPoolCreateFlags    flags;
     uint                       maxSets;
@@ -1904,7 +1904,7 @@ struct VkDescriptorPoolCreateInfo {
 }
 
 struct VkDescriptorSetAllocateInfo {
-    VkStructureType                 sType;
+    VkStructureType                 sType = VkStructureType.VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
     const void*                     pNext;
     VkDescriptorPool                descriptorPool;
     uint                        descriptorSetCount;
@@ -1924,7 +1924,7 @@ struct VkDescriptorBufferInfo {
 }
 
 struct VkWriteDescriptorSet {
-    VkStructureType                  sType;
+    VkStructureType                  sType = VkStructureType.VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
     const void*                      pNext;
     VkDescriptorSet                  dstSet;
     uint                         dstBinding;
@@ -1937,7 +1937,7 @@ struct VkWriteDescriptorSet {
 }
 
 struct VkCopyDescriptorSet {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_COPY_DESCRIPTOR_SET;
     const void*        pNext;
     VkDescriptorSet    srcSet;
     uint           srcBinding;
@@ -1949,7 +1949,7 @@ struct VkCopyDescriptorSet {
 }
 
 struct VkFramebufferCreateInfo {
-    VkStructureType             sType;
+    VkStructureType             sType = VkStructureType.VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
     const void*                 pNext;
     VkFramebufferCreateFlags    flags;
     VkRenderPass                renderPass;
@@ -2001,7 +2001,7 @@ struct VkSubpassDependency {
 }
 
 struct VkRenderPassCreateInfo {
-    VkStructureType                   sType;
+    VkStructureType                   sType = VkStructureType.VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
     const void*                       pNext;
     VkRenderPassCreateFlags           flags;
     uint                          attachmentCount;
@@ -2013,14 +2013,14 @@ struct VkRenderPassCreateInfo {
 }
 
 struct VkCommandPoolCreateInfo {
-    VkStructureType             sType;
+    VkStructureType             sType = VkStructureType.VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     const void*                 pNext;
     VkCommandPoolCreateFlags    flags;
     uint                    queueFamilyIndex;
 }
 
 struct VkCommandBufferAllocateInfo {
-    VkStructureType         sType;
+    VkStructureType         sType = VkStructureType.VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     const void*             pNext;
     VkCommandPool           commandPool;
     VkCommandBufferLevel    level;
@@ -2028,7 +2028,7 @@ struct VkCommandBufferAllocateInfo {
 }
 
 struct VkCommandBufferInheritanceInfo {
-    VkStructureType                  sType;
+    VkStructureType                  sType = VkStructureType.VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_INFO;
     const void*                      pNext;
     VkRenderPass                     renderPass;
     uint                         subpass;
@@ -2039,7 +2039,7 @@ struct VkCommandBufferInheritanceInfo {
 }
 
 struct VkCommandBufferBeginInfo {
-    VkStructureType                          sType;
+	VkStructureType                          sType = VkStructureType.VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
     const void*                              pNext;
     VkCommandBufferUsageFlags                flags;
     const VkCommandBufferInheritanceInfo*    pInheritanceInfo;
@@ -2119,14 +2119,14 @@ struct VkImageResolve {
 }
 
 struct VkMemoryBarrier {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_MEMORY_BARRIER;
     const void*        pNext;
     VkAccessFlags      srcAccessMask;
     VkAccessFlags      dstAccessMask;
 }
 
 struct VkBufferMemoryBarrier {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;
     const void*        pNext;
     VkAccessFlags      srcAccessMask;
     VkAccessFlags      dstAccessMask;
@@ -2138,7 +2138,7 @@ struct VkBufferMemoryBarrier {
 }
 
 struct VkImageMemoryBarrier {
-    VkStructureType            sType;
+	VkStructureType            sType = VkStructureType.VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
     const void*                pNext;
     VkAccessFlags              srcAccessMask;
     VkAccessFlags              dstAccessMask;
@@ -2151,7 +2151,7 @@ struct VkImageMemoryBarrier {
 }
 
 struct VkRenderPassBeginInfo {
-    VkStructureType        sType;
+    VkStructureType        sType = VkStructureType.VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
     const void*            pNext;
     VkRenderPass           renderPass;
     VkFramebuffer          framebuffer;
@@ -3233,7 +3233,7 @@ enum VK_KHR_SWAPCHAIN_EXTENSION_NAME = "VK_KHR_swapchain";
 alias VkFlags VkSwapchainCreateFlagsKHR;
 
 struct VkSwapchainCreateInfoKHR {
-    VkStructureType                  sType;
+    VkStructureType                  sType = VkStructureType.VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
     const void*                      pNext;
     VkSwapchainCreateFlagsKHR        flags;
     VkSurfaceKHR                     surface;
@@ -3254,7 +3254,7 @@ struct VkSwapchainCreateInfoKHR {
 }
 
 struct VkPresentInfoKHR {
-    VkStructureType          sType;
+    VkStructureType          sType = VkStructureType.VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
     const void*              pNext;
     uint                 waitSemaphoreCount;
     const VkSemaphore*       pWaitSemaphores;
@@ -3341,7 +3341,7 @@ struct VkDisplayModePropertiesKHR {
 }
 
 struct VkDisplayModeCreateInfoKHR {
-    VkStructureType                sType;
+    VkStructureType                sType = VkStructureType.VK_STRUCTURE_TYPE_DISPLAY_MODE_CREATE_INFO_KHR;
     const void*                    pNext;
     VkDisplayModeCreateFlagsKHR    flags;
     VkDisplayModeParametersKHR     parameters;
@@ -3365,7 +3365,7 @@ struct VkDisplayPlanePropertiesKHR {
 }
 
 struct VkDisplaySurfaceCreateInfoKHR {
-    VkStructureType                   sType;
+    VkStructureType                   sType = VkStructureType.VK_STRUCTURE_TYPE_DISPLAY_SURFACE_CREATE_INFO_KHR;
     const void*                       pNext;
     VkDisplaySurfaceCreateFlagsKHR    flags;
     VkDisplayModeKHR                  displayMode;
@@ -3434,7 +3434,7 @@ enum VK_KHR_DISPLAY_SWAPCHAIN_SPEC_VERSION = 9;
 enum VK_KHR_DISPLAY_SWAPCHAIN_EXTENSION_NAME = "VK_KHR_display_swapchain";
 
 struct VkDisplayPresentInfoKHR {
-    VkStructureType    sType;
+    VkStructureType    sType = VkStructureType.VK_STRUCTURE_TYPE_DISPLAY_PRESENT_INFO_KHR;
     const void*        pNext;
     VkRect2D           srcRect;
     VkRect2D           dstRect;
@@ -3634,7 +3634,7 @@ version(Windows) {
 	alias VkFlags VkWin32SurfaceCreateFlagsKHR;
 
 	struct VkWin32SurfaceCreateInfoKHR {
-                VkStructureType                 sType;
+                VkStructureType                 sType = VkStructureType.VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
                 const void*                     pNext;
                 VkWin32SurfaceCreateFlagsKHR    flags;
                 HINSTANCE                       hinstance;
@@ -3722,7 +3722,7 @@ alias PFN_vkDebugReportCallbackEXT = extern(C) VkBool32 function(
     void*                                       pUserData);
 
 struct VkDebugReportCallbackCreateInfoEXT {
-    VkStructureType                 sType;
+    VkStructureType                 sType = VkStructureType.VK_STRUCTURE_TYPE_DEBUG_REPORT_CREATE_INFO_EXT;
     const void*                     pNext;
     VkDebugReportFlagsEXT           flags;
     PFN_vkDebugReportCallbackEXT    pfnCallback;
