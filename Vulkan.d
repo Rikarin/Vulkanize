@@ -3624,7 +3624,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateAndroidSurfaceKHR(
 #endif
 #endif /* VK_USE_PLATFORM_ANDROID_KHR */
 +/
-version(Windows7) {
+version(Windows) {
     import core.sys.windows.windows;
 
         enum VK_KHR_win32_surface = 1;
